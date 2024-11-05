@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, subprocess
 from time import sleep as wait, perf_counter as get_time, perf_counter as timer
 from typing import Iterable
 
@@ -109,6 +109,9 @@ def strip_all( _str : str, *strip_args: Iterable[ str ] ) -> str:
 def exit( input_str: str = 'Press [ENTER] to exit...', exit_code = undefined ) -> None:
 	input( input_str )
 	sys.exit( exit_code )
+
+def pip_install( package ):
+    subprocess.check_call( [ sys.executable, "-m", "pip", "install", package ] )
 
 __all__ = (
 	# String constants
