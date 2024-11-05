@@ -111,7 +111,19 @@ def exit( input_str: str = 'Press [ENTER] to exit...', exit_code = undefined ) -
 	sys.exit( exit_code )
 
 def pip_install( package ):
-    subprocess.check_call( [ sys.executable, "-m", "pip", "install", package ] )
+	"""Opens a new subprocess and calls pip from current python installation to install the given package
+
+ 	Usage:
+  	```py
+	 try:
+	    import pandas as pd
+	except ImportError:
+	    result = pip_install( "pandas" ) 
+	finally:
+	    import pandas as pd
+	```
+ 	"""
+	return subprocess.check_call( [ sys.executable, "-m", "pip", "install", package ] )
 
 __all__ = (
 	# String constants
