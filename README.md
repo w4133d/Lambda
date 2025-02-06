@@ -1,7 +1,9 @@
 # Lambda
 A tool to convert metallic-roughness texture maps to the specular-gloss pipeline
 
-Roughness to gloss support **will be added** at some point in the future for convenience (whenever I get the time). 
+Roughness to gloss support **will be added** at some point in the future for convenience (whenever I get the time). For now, you can easily convert roughness maps to gloss yourself; invert the roughness map in photoshop / GIMP / paint.net.
+
+---
 
 ## Usage
 
@@ -20,6 +22,10 @@ A table of recognised suffixes can be found here:
 | 			| _albedo 	|
 | 			| _diffuse 	|
 | 			| _diff 	|
+
+If you want to do this in bulk, and all your textures follow a different naming scheme, I recommend getting [Microsoft Power Toys](https://learn.microsoft.com/en-us/windows/powertoys/) and using the [bulk renaming feature](https://learn.microsoft.com/en-us/windows/powertoys/powerrename) _(PowerRename)_ and get them into a format that the tool can read. 
+
+In the future, I will update / recreate this tool (possibly in C#) with a GUI so you can input the maps themselves so the file names don't have to follow one of the supported naming schemes. 
 
 ## Settings
 
