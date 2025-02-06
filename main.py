@@ -12,7 +12,7 @@ SUPP_IMG_READS = sorted( PIL.Image.registered_extensions() )
 SUPP_IMG_WRITES = sorted( ( 'png', 'jpg', 'jpeg', 'tif', 'tiff', 'exr', 'dds' ) )
 
 endswith_color = ( '_c', '_col', '_color', '_colour', '_albedo', '_diffuse', '_diff' )
-endswith_metal = ( '_m', '_metal', '_metallic', '_metalness',  )
+endswith_metal = ( '_m', '_metal', '_metallic', '_metalness' )
 
 def __init__():
 	clear_console()
@@ -44,7 +44,7 @@ def __main__():
 		if( stdlib.binary_search( path.get_file_extension( arg ), SUPP_IMG_READS ) == undefined ):
 			raise_unresolved()
 		
-		# Sort for scemantic
+		# Sort for semantic
 		## Colour
 		if( any( file_name.endswith( _ext ) for _ext in endswith_color ) ):
 			albedo_path = arg
@@ -56,7 +56,7 @@ def __main__():
 			log.info( "METALLIC MAP FOUND:", path.get_base_name( metallic_path, true ) )
 			continue
 
-		# Scemantic type could not be found, hence image could not be identified 
+		# Semantic type could not be found, hence image could not be identified 
 		raise_unidentifiable()
 	
 	# This should only be true if they've passed two of the same map type (i.e. 
